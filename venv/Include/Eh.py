@@ -95,6 +95,102 @@ for n in range(2,10):
         print(n, 'is a prime number')
 
 
+words = ['cat','window','defensestrate']
+
+for w in words:
+    print(w,len(w))
+
+words = ['cat','window','defensestrate']
+
+for w in words:
+    print(w, len(w))
+
+# Strategy: Iterate over a copy, so you dont have currenceny issues
+for user, status in users.copy().items():
+    if status == 'inactive':
+        del  users[user]
+
+for i in range(5):
+    print(i)
+
+range(5,10)
+
+range(0,10,3)
+
+a = ['Mary','had','a','little','lamb']
+
+for i in range(len(a)):
+    print(i,a[i])
+
+print(range(10))
+
+sum(range(4))
+
+list(range(4))
+
+for n in range(2, 10):
+    for x in range(2, n):
+        if n % x == 0:
+            print(n, 'equals', x, '*', n//x)
+            break
+    else:
+        # loop fell through without find a factor
+
+while True:
+    pass
+
+class MyEmptyClass:
+    pass
+
+def initlog(*args):
+    pass # Remember to implement this!
+
+def fib(n):
+    '''Print a Fibonacci series up to n.'''
+    a, b = 0, 1 # double assignment so cool!
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+    print()
+
+fib(2000)
+
+def foo(name, **kwargs):
+    return 'name' in kwargs
+
+#def foo(name,/,**kwargs):
+#    return 'name' in kwargs
+
+def concat(*args, sep="/"):
+    return sep.join(args)
+
+def concatalso(*args, sep="-"):
+    return sep.join(args)
+
+def parrot(voltage, state='a stiff', action='voom'):
+    print("-- This parrot wouldn't", action, end=' ')
+    print("if you put", voltage, "volts through it.", end=' ')
+    print("E's", state, "!")
+
+d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+parrot(**d)
+
+def make_incrementor(n):
+    return lambda x: x + n
+
+f = make_incrementor(42)
+
+f(0)
+
+
+pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+pairs.sort(key=lambda pair: pair[1])
+
+pairs
+
+
+
+
 
 
 
