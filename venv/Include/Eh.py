@@ -188,6 +188,147 @@ pairs.sort(key=lambda pair: pair[1])
 
 pairs
 
+def my_function():
+    '''Do nothing, but domcument it.
+
+    No, really, it does not do anything bro.
+    :return:
+    '''
+    pass
+
+print(my_function.__doc__)
+
+fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
+
+fruits.count('apple')
+
+fruits.count('tangerine')
+
+fruits.index('bannana')
+
+fruits.index('banana',4) # Find next banana starting a postion 4 bro
+
+fruits.reverse()
+
+fruits.append('grade')
+
+fruits.sort()
+
+fruits.pop()
+
+stacke =[3,4,5]
+
+stacke.append(6)
+stacke.append(7)
+
+stacke
+
+stacke.pop()
+
+stacke.pop()
+
+stacke.pop()
+
+from collections import  deque
+queue = deque(["Eric", "John", "Michael"])
+queue.append("Terry")
+queue.append("Graham")
+
+squares = []
+for x in range(10):
+    squares.append(x**2)
+
+squares
+
+squares = list(map(lambda  x: x**2,range(10)))
+
+squares = [x**2 for x in range(10)]
+
+vec = [-4,-2,0,2,4]
+
+[x * 2 for x in vec]
+
+[x for x in vec if x >= 0]
+
+[abs(x) for x in vec]
+
+freshfruit = ['  banana', '  loganberry ', 'passion fruit  ']
+[weapon.strip() for weapon in freshfruit]
+
+[(x, x**2) for x in range(6)]
+
+# this creates a list of 2-tuples like (number,square)
+[(x,x**2) for x in range(6)]
+
+freshfruit = ['  banana', '  loganberry ', 'passion fruit  ']
+[weapon.strip() for weapon in freshfruit]
+
+vec = [[1,2,3], [4,5,6], [7,8,9]]
+[num for elem in vec for num in elem]
+
+vec = [[1,2,3], [4,5,6], [7,8,9]]
+
+a = [-1, 1, 66.25, 333, 333, 1234.5]
+del a[0]
+
+del a[2:4]
+
+t = 12345, 54312, 'hello!'
+t[0]
+
+u = t,(1,2,3,4,5)
+v = ([1, 2, 3], [3, 2, 1])
+
+
+empty = ()
+
+singleton = 'hello',
+
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+
+print(basket)
+
+'orange' in basket
+
+a = set('abracadabra')
+b = set('alacazam')
+
+# set comprehension
+a = {x for x in 'abracadabra' if x not in 'abc'}
+print(a)
+
+a | b
+a - b
+a & b
+
+# dictionary comprehension
+{x: x**2 for x in (2,4,6)}
+
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+
+for k, v in knights.items():
+    print(k,v)
+
+
+for i in reversed(range(1,10,2)):
+    print(i)
+
+import math
+
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+
+filtered_data = []
+
+for value in raw_date:
+    if not math.isnan(value):
+        filtered_data.append(value)
+
+
+
+
+
+
+
 
 
 
