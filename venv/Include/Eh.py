@@ -1,4 +1,6 @@
 
+import fibo
+
 s ='hi'
 
 print(s[1])
@@ -323,6 +325,85 @@ for value in raw_date:
     if not math.isnan(value):
         filtered_data.append(value)
 
+
+
+
+fibo.fib(1000)
+
+import fibo as fib
+fib.fib(500)
+
+from fibo import fib as fibonacci
+
+import sys
+
+sys.path.append('/ufs/guido/lib/python')
+
+s = 'Hello, world.'
+
+str(s)
+
+repr(s)
+
+print('We are the {} who say "{}!"'.format('knights', 'Ni'))
+
+print('The story of {0}, {1}, and {other}.'.format('Bill', 'Manfred',other='Georg'))
+
+
+f = open('workfile','w')
+
+with open('workfile') as f:
+    read_data = f.read()
+
+# can check that the file was automatically closed with resources
+f.closed
+
+f.read()
+
+f.read() # will be blank
+
+
+f.readline()
+
+f.readline()
+
+f.readline()
+
+for line in f:
+    print(line, end='')
+
+f.write('This is a test\n')
+
+value = ('the answer', 42)
+
+s = str(value) # convert the tuple to string
+f.write(s)
+
+f = open('filex','rb+')
+
+f.write(b'01234567def')
+
+f.seek(5)
+
+f.read(1)
+
+f.read(1)
+
+import json
+json.dump([1,'simple','list'])
+
+#json.dump(x f)
+
+# x = json.load(f)
+
+while True:
+    try:
+        x = int(input("Please enter a number: "))
+        break
+    except ValueError:
+        print("Opps! That was no valid number. Try again...")
+
+# raise NameError('HiThere')
 
 
 
