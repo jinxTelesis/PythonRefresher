@@ -406,6 +406,155 @@ while True:
 # raise NameError('HiThere')
 
 
+class Error(Exception):
+    '''Base class for exceptions'''
+    pass
+
+class InputError(Error):
+    """Exception raised for erros in the input.
+
+    Attributes:
+        expression -- input expression in whcih the error occured"""
+
+    def __init__(self, expression,message):
+        self.expression = expression
+        self.message = message
+
+
+class TransitionError(Error):
+    """Raised when an operation attemps a state transiion that not allowed"""
+
+    def __init__(self,previous,next,message):
+        self.previous = previous
+        self.next = next
+        self.message = message
+
+try:
+    raise keyboardInterrupt
+finally:
+    print('Goodbye, world!')
+
+def scope_test():
+    def do_local():
+        spam = "local spam"
+
+    def do_nonlocal():
+        nonlocal spam
+        spam = "nonlocal spam"
+
+    def do_global():
+        global spam
+        spam = "global spam"
+
+    spam = "test spam"
+    do_local()
+    print("After local assignment:", spam)
+    do_nonlocal()
+    print("After nonlocal assignment:", spam)
+    do_global()
+    print("After global assignment:", spam)
+
+class MyClass:
+    """A simple class"""
+    i = 12345
+
+    def f(self):
+        return 'hello world'
+
+x = MyClass()
+
+class Complex:
+    def __init__(self, realpart, imagpart):
+        self.r = realpart
+        self.i = imagpart
+
+x = Complex(3.0,-4.5)
+x.r, x.i
+
+class Dog:
+
+    kindr = 'canine'
+
+    def __init__(self,name):
+        self.name = name
+
+d = Dog('Fido')
+e = Dog('Buddy')
+
+d.kind
+e.kind
+
+def make_incrementor(n):
+    return lambda x: x + n
+
+f = make_incrementor(42)
+
+f(0)
+
+# Function Annotations
+
+def f(ham: str, eggs: str = 'eggs')-> str:
+    print("Annotations:", f.__annotations__)
+    print("Arguments:", ham, eggs)
+    return ham + ' and ' + eggs
+
+f('spam')
+
+'12'.zfill(5)
+
+'-3.14'.zfill(7)
+
+#entire file
+f.read()
+
+# first line
+f.readline()
+
+
+for line in f:
+    print(line, end='')
+
+f.write('blah blah')
+
+value = ('the answer',42)
+
+s = str(value)
+
+f.write(s)
+
+json.dumps([1,'simple','list'])
+
+json.dump(x,f)
+
+for arg in sys.argv[1:]:
+    try:
+        f = open(arg, 'r')
+    except OSError:
+        print('cannot open', arg)
+    else:
+        print(arg, 'has', len(f.readlines()), 'lines')
+        f.close()
+
+
+try:
+    raise Exception('spam','eggs')
+except Exception as inst:
+    print(type(inst))
+    print(inst.args)
+    print(inst)
+
+    x, y = inst.args
+    print('x =', x)
+    print('y =', y)
+
+def this_fails():
+    x = 1/0
+
+try:
+    this_fails()
+except ZeroDivisionError as err:
+    print('Handling run-time error:',err)
+
 
 
 
