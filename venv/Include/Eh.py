@@ -556,6 +556,102 @@ except ZeroDivisionError as err:
     print('Handling run-time error:',err)
 
 
+raise NameError('HiThere')
+
+try:
+    raise NameError("HiThere")
+except NameError:
+    print('An exception flew by!')
+    raise
+
+class Error(Exception):
+    """Base class for exceptions in this module."""
+    pass
+
+class InputError(Error):
+    """Exception raised for errors in the input"""
+
+    def __init__(self, expression, message):
+        self.expression = expression
+        self.message = message
+
+class TransitionError(Error):
+    """Raised when an operation attempts a state transition that's not
+    allowed."""
+
+    def __init__(self, previous, next, message):
+        self.previous = previous
+        self.next = next
+        self.message = message
+
+try:
+    raise KeyboardInterrupt
+finally:
+    print('Goodbye,world!')
+
+def bool_return():
+    try:
+        return True
+    finally:
+        return False
+
+def divide(x,y):
+    try:
+        result = x / y
+    except ZeroDivisionError:
+        print("division by zero!")
+    else:
+        print("result is", result)
+    finally:
+        print("executing finally clause")
+
+divide(2,1)
+
+#bad
+for line in open("myfile.txt"):
+    print(line, end="")
+
+with open("myfile.txt") as f:
+    for line in f:
+        print(line, end="")
+
+
+def scope_test():
+    def do_local():
+        spam = "local spam"
+
+    def do_nonlocal():
+        nonlocal spam
+        spam = "global spam"
+
+    def do_global():
+        global spam
+        spam = "global spam"
+
+    spam = "test spam"
+    do_local()
+    print("After local assignment test:", spam)
+    do_nonlocal()
+    print("After nonlocal assignment test:", spam)
+    do_global()
+    print("After global assignment test:", spam)
+
+
+scope_test()
+print("In global scope test:", spam)
+
+class MyClass:
+    """A class example"""
+    i = 12345
+
+    def f(self):
+        return 'hello world'
+
+
+
+
+
+
 
 
 
