@@ -648,11 +648,110 @@ class MyClass:
         return 'hello world'
 
 
+x = MyClass()
+
+class Complex:
+    def __init__(self,realpart,imagpart):
+        self.r = realpart
+        self.i = imagpart
+
+x = Complex(3.0,-4.5)
+x.r, x.i
+
+#instance objects
+
+x.counter = 1
+while c.counter <10:
+    x.counter = x.counter * 2
+print(x.counter)
+del x.counter
+
+class Dog:
+
+    kind = 'canine' # class variable shared by all instances
+
+    def __init__(self, name):
+        self.name = name
+
+d = Dog('Fido')
+e = Dog('Buddy')
+
+d.kind
+e.kind
+d.name
+e.name
+
+class Dog:
+
+    tricks = []
+
+    def __init__(self,name):
+        self.name = name
+
+    def add_trick(self, trick):
+        self.tricks.append(trick)
 
 
+# python lookup if name occurs in both instance and class, lookup will mask based on instance
+
+class Warehouse:
+    purpose = 'storage'
+    region = 'west'
+
+w1 = Warehouse()
+
+print(w1.purpose, w1.region)
+
+w2 = Warehouse()
+w2.region = 'east'
+print(w2.purpose,w2.region)
 
 
+# Function defined outside the class
+def f1(self, x, y):
+    return min(x, x+y)
 
+class C:
+    f = f1
+
+    def g(self):
+        return 'hello world'
+
+    h = g
+
+class Bag:
+    def __init__(self):
+        self.data = []
+
+    def add(self, x):
+        self.data.append(x)
+
+    def addtwice(self, x):
+        self.add(x)
+        self.add(x)
+
+# base class can be in another module as so
+class DerivedClassName(modname.BaseClassName):
+    pass
+
+class Mapping:
+    def __init__(self, iterable):
+        self.items_list = []
+        self.__update(iterable)
+
+    def update(self, iterable):
+        for item in iterable:
+            self.items_list.append(item)
+
+    __update = update # private copy of original update() method
+
+class MappingSubclass(Mapping):
+
+    def update(self, keys, values):
+        # provides new signature for update()
+        # but does not break __init__()
+        for item in zip(keys, values):
+            self.items_list.append(item)
 
 
 
