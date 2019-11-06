@@ -753,6 +753,88 @@ class MappingSubclass(Mapping):
         for item in zip(keys, values):
             self.items_list.append(item)
 
+class Employee:
+    pass
+
+john = Employee() # Create an empty employee record
+
+john.name = 'John Doe'
+john.dept = 'computer lab'
+john.salary = 1000
+
+for element in [1,2,3]:
+    print(element)
+
+for element in (1,2,3):
+    print(element)
+
+for key in {'one':1, 'two':2}:
+    print(key)
+for char in "123":
+    print(char)
+for line in open("myfile.txt"):
+    print(line, end='')
+
+
+class Reverse:
+
+    def __init__(self,data):
+        self.data = data
+        self.index = len(data)
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index == 0:
+            raise StopIteration
+        self.index = self.index -1
+        return self.data[self.index]
+
+#Generators
+def reverse(data):
+    for index in range(len(data)-1,-1,-1):
+        yield data[index]
+
+for char in reverse('golf'):
+    print(char)
+
+sum(i * i for i in range(10))
+
+xvec = [10,20,30]
+yvec = [7,5,3]
+
+sum(x * y for x,y in zip(xvec,yvec))
+
+
+import os
+
+os.getcwd() #working directory
+
+os.chdir('/server/accesslogs') # change current working directory
+os.system('mkdir today') #make Run the command mkdir in the system shell
+
+dir(os)
+
+help(os)
+
+import  shutil
+
+shutil.copyfile('data.db','archive.db')
+
+shutil.move('/build/executables','installdir')
+
+# file Wildcards
+
+import glob
+glob.glob('*.py')
+
+import sys
+print(sys.argv)
+
+import sys
+print(sys.argv)
+
 
 
 
