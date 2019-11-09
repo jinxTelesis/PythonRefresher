@@ -1,4 +1,4 @@
-import threading, zipfile
+import threading, zipfile, logging
 
 class AsyncZip(threading.Thread):
     def __init__(self,infile,outfile):
@@ -17,4 +17,12 @@ background.start()
 print('The main program continues to run in foreground.')
 
 background.join()
-print("Main program waited until background was finished!")
+print("Main program waited uaaaaaaawdwntil background was finished!")
+
+
+logging.debug('Debugging information')
+logging.info('Informational message')
+logging.warning('Warning:config file %s not found','server.conf')
+logging.error("Error occured")
+logging.critical('Critical error -- shutting down')
+
